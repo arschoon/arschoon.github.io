@@ -1,1 +1,82 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrea Schoonover | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Andrea Schoonover</h1>
+      <p>Future grad student, creative thinker, and lifelong learner.</p>
+    </div>
+  </header>
+
+  <nav class="vertical-nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="about" class="fade-in">
+      <h2>About Me</h2>
+      <p>Hello! I'm Andrea, a dedicated and curious learner with interests in [your field]. I'm currently applying to graduate school to further explore [topic/interest].</p>
+    </section>
+
+    <section id="projects" class="fade-in">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Project Title</h3>
+          <p>Short description of what the project is, what tools or methods you used, and what you learned.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project Title</h3>
+          <p>Short description of what the project is, what tools or methods you used, and what you learned.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="fade-in">
+      <h2>Resume</h2>
+      <p>You can view or download my resume <a href="pdf/Andrea_Schoonover_Resume.pdf" target="_blank">here</a>.</p>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:andrea@example.com">andrea@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Andrea Schoonover</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>
