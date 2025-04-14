@@ -1,0 +1,139 @@
+/* Sticky Vertical Navigation */
+.vertical-nav {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: #ede7f6;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(94, 75, 139, 0.1);
+  z-index: 1000;
+}
+
+.vertical-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vertical-nav a {
+  color: #5e4b8b;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.vertical-nav a:hover {
+  color: #3e2d6d;
+}
+
+main {
+  margin-left: 160px;
+  max-width: 900px;
+  padding: 2rem 1rem;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background-color: #fdfdfd;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #5e4b8b;
+}
+
+a {
+  color: #5e4b8b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header & Hero */
+header.hero {
+  background: #ede7f6;
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Main Sections */
+section {
+  margin-bottom: 4rem;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #f3f0fb;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(94, 75, 139, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(94, 75, 139, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: #ede7f6;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .vertical-nav {
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
